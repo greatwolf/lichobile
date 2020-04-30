@@ -115,6 +115,7 @@ export default {
         ['riohacha' ],
         ['kosal' ],
         ['leipzig' ],
+        ['libra' ],
         ['fantasy' ],
         ['pixel'],
         ['maestro'],
