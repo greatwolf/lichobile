@@ -1,5 +1,9 @@
 language: android
 jdk: oraclejdk8
+# blocklist to stop deploy from triggering another build
+branches:
+  except:
+  - /^devbuild\-\d{8}\-[a-f0-9]{7}/
 android:
    components:
       - tools
@@ -33,3 +37,17 @@ cache:
   - $HOME/.gradle/caches/
   - $HOME/.gradle/wrapper/
   - $HOME/.android/build-cache
+before_deploy:
+  - export TRAVIS_TAG=devbuild-$(date +'%Y%m%d')-$(git log --format=%h -1)
+deploy:
+  provider: releases
+  api_key:
+    secure: "mq8CjS/YIk4kbJmA9LM3nYlW2aaUTEiuBxA51Ka5SRCE9QzI/wtYhOvtfDMZRBWnTkRd+aH6mL9QVUZm45uXwxLB/Tph1lDmWjY6agMKMmtGbOJgTZIoQjLIRldnqWA2WZzKgSELfRKCa2JZ9pzvprGARaIk0vj5+seBj3Yp4MPjsRYcpPNHJYJZZ7vPttJUQ1aPC235VfoNGMaWPLEz9wRyT/kdXnIvGKa3TY7zF+J9XCzH6pzYVdgE19znNeYoqFv69Cijn8nMTI9jWp/ilWDKrZ9y647d/XlF7d53dr/ScFR6prY1Dwkyz/QDZOZ8IFlcWQOZmHmvkII3+i1p2Nxa3LQUTRK+jUtGH5p3WwI8QIyhc6pUB1vWS09M4AAauYpm9eOozZnN7TLrNgjPg2Mo/nleo/VFwKd3YH2UORDc5u7FaIe68cM1ngFQ3oALKxrra3j0PKrU2bdigPIFbhItBa5OcC+tUzmntpsUq/II07tdHzXL7yHAEAq+/5nashTw6UEfKoJLkhGlv4Q0pqQhCYvCUwRGJhoVvm+a9qZMI0CDenCAhxLLFT73gugyY8lKQ5BaRKjSP/m/nxNzuZwJwODzBzRu5Sl9FN2foN/U43m9zCxsCPoYtdqXi1hgrWUcy/kWnOxGfbk5vRdpEzE0CWx2BVDra3yYde8Rp6s="
+  file: './app/build/outputs/apk/release/app-release.apk'
+  skip_cleanup: true
+  tags: true
+  prerelease: true
+  overwrite: true
+  on:
+    repo: greatwolf/lichobile
+    branch: devbuild/prerelease
