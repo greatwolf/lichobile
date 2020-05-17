@@ -44,7 +44,7 @@ export function clockBody(ctrl: IChessClockCtrl) {
 
   const whiteClockTimeShortClass = [
     'clockTime',
-    clock.whiteTime() < 60000 && !whiteFlagged ? 'short' : 'noshort'
+    !whiteFlagged ? 'short' : 'noshort'
   ].join(' ')
 
   const blackClockTimeClass = [
@@ -55,7 +55,7 @@ export function clockBody(ctrl: IChessClockCtrl) {
 
   const blackClockTimeShortClass = [
     'clockTime',
-    clock.blackTime() < 60000 && !blackFlagged ? 'short' : 'noshort'
+    !blackFlagged ? 'short' : 'noshort'
   ].join(' ')
 
   return (
