@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "751837701865",
+    "firebase_url": "https://lichess-cc4ef.firebaseio.com",
+    "project_id": "lichess-cc4ef",
+    "storage_bucket": "lichess-cc4ef.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:751837701865:android:39c2ae91fb386c9f85b278",
+        "android_client_info": {
+          "package_name": "org.lichess.mobileapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "751837701865-utj7bs8pf07pl18kdq405mv0q3moh2jr.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAudTu8eJhgpMojIZ-_rH6G5tM1I6iFBWc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "751837701865-utj7bs8pf07pl18kdq405mv0q3moh2jr.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
